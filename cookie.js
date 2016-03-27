@@ -49,7 +49,7 @@ var locations = [pioneerSquare, portlandAirport, washSquare, sellWood, pearlDis]
 function cookiesHr() {
   for(i = 0; i < locations.length; i++) {
     for(x = 0; x < 8; x++) {
-      var hoursStore = locations[i].avgCookie * locations[i].getCustomer();
+      var cookes = locations[i].avgCookie * locations[i].getCustomer();
       //TODO:create a new propety for each ocject
     }
   }
