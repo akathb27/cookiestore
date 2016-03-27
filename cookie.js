@@ -2,18 +2,23 @@ var pioneerSquare = {
   minNumber: 17,
   maxNumber: 88,
   avgCookie: 5.2,
+  cookies: [],
+  totalCookies: 0,
+  listId: "PioneerSquare",
   getCustomer: function() {
-  Math.floor(Math.random() * (50-5)) + 5;
+  return Math.random() * (this.maxNumber - this.minNumber) + this.minNumber;
   }
 }
-
 
 var portlandAirport = {
   minNumber: 6,
   maxNumber: 24,
   avgCookie: 1.2,
+  cookies: [],
+  totalCookies: 0,
+  listId: "PortlandAirport",
   getCustomer: function() {
-  Math.floor(Math.random() * (50-5)) + 5;
+  return Math.random() * (this.maxNumber - this.minNumber) + this.minNumber;
 }
 }
 
@@ -21,8 +26,11 @@ var washSquare = {
   minNumber: 11,
   maxNumber: 38,
   avgCookie: 1.9,
+  cookies: [],
+  totalCookies: 0,
+  listId: "WashingtonSquare",
   getCustomer: function() {
-  Math.floor(Math.random() * (50-5)) + 5;
+  return Math.random() * (this.maxNumber - this.minNumber) + this.minNumber;
 }
 }
 
@@ -30,8 +38,11 @@ var sellWood = {
   minNumber: 20,
   maxNumber: 48,
   avgCookie: 3.3,
+  cookies: [],
+  totalCookies: 0,
+  listId: "Sellwood",
   getCustomer: function() {
-  Math.floor(Math.random() * (50-5)) + 5;
+  return Math.random() * (this.maxNumber - this.minNumber) + this.minNumber;
 }
 }
 
@@ -39,39 +50,24 @@ var pearlDis = {
   minNumber: 3,
   maxNumber: 24,
   avgCookie: 2.6,
+  cookies: [],
+  totalCookies: 0,
+  listId: "PearlDistrict",
   getCustomer: function() {
-  Math.floor(Math.random() * (50-5)) + 5;
+  return Math.random() * (this.maxNumber - this.minNumber) + this.minNumber;
 }
-}
+};
 
-var locations = [pioneerSquare, portlandAirport, washSquare, sellWood, pearlDis];
+var stores = [pioneerSquare, portlandAirport, washSquare, sellWood, pearlDis];
+var hours = ["10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm", "5pm"];
 
-function cookiesHr() {
-  for(i = 0; i < locations.length; i++) {
-    for(x = 0; x < 8; x++) {
-      var cookes = locations[i].avgCookie * locations[i].getCustomer();
-      //TODO:create a new propety for each ocject
-    }
+for(var storeIndex = 0; storeIndex < stores.length; storeIndex++){
+  for(var hoursIndex = 0; hoursIndex < hours.length; hoursIndex++){
+    var store = stores[storeIndex];
+    var cookieSold = Math.round(store.avgCookie * store.getCustomer());
+    store.cookies.push(cookieSold);
+    store.totalCookies += cookieSold;
+    document.getElementById(store.listId).innerHTML += "<li>" + hours[hoursIndex] + ": " + cookieSold + "</li>"
   }
+      document.getElementById(store.listId).innerHTML += "<li>Total: " + store.totalCookies + "</li>"
 }
-
-
-
-
-//function addTotals(){
-  //var storeList = document.getElementById("pioneerSquare");
-  //listItem.innerHTML = pioneerSquare.getCookietotal();
-  //var storeList = document.getElementById("portlandAirport");
-  ///listItem.innerHTML = portlandAirport.getCookietotal();
-  //var storeList = document.getElementById("washSquare");
-//  listItem.innerHTML = washSquare.getCookietotal();
-//  var storeList = document.getElementById("sellWood");
-//  listItem.innerHTML = sellWood.getCookietotal();
-//  var storeList = document.getElementById("pearlDis");
-//  listItem.innerHTML = pearlDis.getCookietotal();
-//}
-
-
-//function addtoTable (){
-  //var table = document.getElementById("storeList")
-//}
