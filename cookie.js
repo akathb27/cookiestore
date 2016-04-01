@@ -55,8 +55,10 @@ var pearlDis = {
   listId: "PearlDistrict",
   getCustomer: function() {
   return Math.random() * (this.maxNumber - this.minNumber) + this.minNumber;
-}
+  }
 };
+
+
 
 var stores = [pioneerSquare, portlandAirport, washSquare, sellWood, pearlDis];
 var hours = ["10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm", "5pm"];
