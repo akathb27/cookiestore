@@ -26,9 +26,9 @@ for(var storeIndex = 0; storeIndex < stores.length; storeIndex++){
     var store = stores[storeIndex];
     var cookieSold = Math.round(store.avgCookie * store.getCustomer());
   //  store.cookies.push(cookieSold);
-    totalCookies += cookieSold; 
+    totalCookies += cookieSold;
 
- 
+
     document.getElementById(store.listId).innerHTML += "<tr><td>" + hours[hoursIndex] + "</td><td>" + cookieSold + "</td></tr>"
   }
     document.getElementById(store.listId).innerHTML += "<tr><td>Total</td><td> " + totalCookies + "</td></tr>"
