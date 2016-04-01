@@ -10,11 +10,11 @@ var storeInfo = function(min, max, average, location) {
   }
 }
 
-var pioneerSquare = new storeInfo (17, 88, 5.2, "Pioneer Square");
-var portlandAirport = new storeInfo (6, 24, 1.2, "Portland Airport");
-var washSquare = new storeInfo (11, 38, 1.9, "Washington Square");
+var pioneerSquare = new storeInfo (17, 88, 5.2, "PioneerSquare");
+var portlandAirport = new storeInfo (6, 24, 1.2, "PortlandAirport");
+var washSquare = new storeInfo (11, 38, 1.9, "WashingtonSquare");
 var sellWood = new storeInfo (20, 48, 3.3, "Sellwood");
-var pearlDis = new storeInfo (3, 24, 2.6, "Pearl District");
+var pearlDis = new storeInfo (3, 24, 2.6, "PearlDistrict");
 
 
 var stores = [pioneerSquare, portlandAirport, washSquare, sellWood, pearlDis];
