@@ -10,11 +10,11 @@ var storeInfo = function(min, max, average, location) {
   }
 }
 
-var pioneerSquare = new storeInfo (17, 88, 5.2, "Pioneer Square");
-var portlandAirport = new storeInfo (6, 24, 1.2, "Portland Airport");
-var washSquare = new storeInfo (11, 38, 1.9, "Washington Square");
+var pioneerSquare = new storeInfo (17, 88, 5.2, "PioneerSquare");
+var portlandAirport = new storeInfo (6, 24, 1.2, "PortlandAirport");
+var washSquare = new storeInfo (11, 38, 1.9, "WashingtonSquare");
 var sellWood = new storeInfo (20, 48, 3.3, "Sellwood");
-var pearlDis = new storeInfo (3, 24, 2.6, "Pearl District");
+var pearlDis = new storeInfo (3, 24, 2.6, "PearlDistrict");
 
 
 var stores = [pioneerSquare, portlandAirport, washSquare, sellWood, pearlDis];
@@ -26,12 +26,19 @@ for(var storeIndex = 0; storeIndex < stores.length; storeIndex++){
     var store = stores[storeIndex];
     var cookieSold = Math.round(store.avgCookie * store.getCustomer());
   //  store.cookies.push(cookieSold);
-    totalCookies += cookieSold;
-    document.getElementById(store.listId).innerHTML += "<li>" + hours[hoursIndex] + ": " + cookieSold + "</li>"
+    totalCookies += cookieSold; 
+
+ 
+    document.getElementById(store.listId).innerHTML += "<tr><td>" + hours[hoursIndex] + "</td><td>" + cookieSold + "</td></tr>"
   }
-    document.getElementById(store.listId).innerHTML += "<li>Total: " + totalCookies + "</li>"
+    document.getElementById(store.listId).innerHTML += "<tr><td>Total</td><td> " + totalCookies + "</td></tr>"
 }
 
+
+//function addStores() {
+//  var table = document.getElementById(storeList);
+
+//}
 
 
 
