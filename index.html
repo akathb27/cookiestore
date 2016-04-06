@@ -6,40 +6,32 @@
   <body>
   <header>Cookie Demand by Store </br></br>Sammy's Salmon Cookies
   </header>
-    <!-- <table>
-      <tbody id="storelist">
-        <tr>
-          <th>Location<th>
-          <th>Number of Sales</th>
-          <th>Total Sales</th>
-        </tr>
-      </tbody>
-    </table> -->
-    <nav>
+  <body>
+    <form>
 
-      <h3><strong>Pioneer Square</strong></h3>
-       <table id ="PioneerSquare">
-       </table>
+      <label for="storeLocation">New Store Location: </label>
+      <input type="text" id="storeLocation" name="listId"><br>
 
-        <h3><strong>Portland Airport</strong></h3>
-        <table id ="PortlandAirport">
-         </table>
+      <label for="minNumber">Minimum Sales: </label>
+      <input type=parseInt() id="minSales" name="minimum"><br>
 
-         <h3><strong>Washington Square</strong></h3>
-         <table id ="WashingtonSquare">
-          </table>
+      <label for="maxNumber">Maximum Sales: </label>
+      <input type=parseInt() id="maxSales" name="maximum"><br>
 
-          <h3><strong>Sellwood</strong></h3>
-          <table id ="Sellwood">
-           </table>
+      <label for="avgCookie">Average Cookie Sales: </label>
+      <input type=parseInt() id="avgCookie" name="average"><br>
 
-           <h3><strong>Pearl District</strong></h3>
-           <table id ="PearlDistrict">
-            </table>
-          <img src="http://www.smileycookie.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/d/o/dozen_fish_smileys.jpg" width="300"> --> -->
-        </nav>
+      <input type="button" value="Get Projected Sales" onclick="getSales()">
+
+    </form>
 
     <script text="text/javascript" src="cookie.js"></script>
   </body>
+    <nav id="stores">
+
+    </nav>
+    <script text="text/javascript" src="cookie.js"></script>
+  </body>
+
   <footer>Abby Burks 2016</footer>
 </html>

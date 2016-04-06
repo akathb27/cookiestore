@@ -2,43 +2,47 @@ var storeInfo = function(min, max, average, location) {
   this.minNumber = min;
   this.maxNumber = max;
   this.avgCookie = average;
-//  this.cookies = cookies; *need to create array
-//  this.totalCookies= total; *need to create array
   this.listId = location;
   this.getCustomer = function() {
   return Math.random() * (this.maxNumber - this.minNumber) + this.minNumber;
   }
+  this.writeHeader = function() {
+    document.getElementById("stores").innerHTML += "<h3>" + this.listId + "</h3>"
+  }
+  this.writeTable = function() {
+    var storeTable = "<table>"
+    for(var hoursIndex = 0; hoursIndex < hours.length; hoursIndex++){
+      var cookieSold = Math.round(this.avgCookie * this.getCustomer());
+      totalCookies += cookieSold;
+      storeTable += "<tr><td>" + hours[hoursIndex] + "</td><td>" + cookieSold + "</td></tr>"
+    }
+      storeTable += "<tr><td>Total</td><td> " + totalCookies + "</td></tr></table>"
+      document.getElementById("stores").innerHTML += storeTable
+  }
 }
 
-var pioneerSquare = new storeInfo (17, 88, 5.2, "PioneerSquare");
-var portlandAirport = new storeInfo (6, 24, 1.2, "PortlandAirport");
-var washSquare = new storeInfo (11, 38, 1.9, "WashingtonSquare");
+var pioneerSquare = new storeInfo (17, 88, 5.2, "Pioneer Square");
+var portlandAirport = new storeInfo (6, 24, 1.2, "Portland Airport");
+var washSquare = new storeInfo (11, 38, 1.9, "Washington Square");
 var sellWood = new storeInfo (20, 48, 3.3, "Sellwood");
-var pearlDis = new storeInfo (3, 24, 2.6, "PearlDistrict");
-
+var pearlDis = new storeInfo (3, 24, 2.6, "Pearl District");
 
 var stores = [pioneerSquare, portlandAirport, washSquare, sellWood, pearlDis];
 var hours = ["10:00 am", "11:00 am", "12:00 pm", "1:00 pm", "2:00 pm", "3:00 pm", "4:00 pm", "5:00 pm"];
 
 for(var storeIndex = 0; storeIndex < stores.length; storeIndex++){
   var totalCookies = 0;
-  for(var hoursIndex = 0; hoursIndex < hours.length; hoursIndex++){
-    var store = stores[storeIndex];
-    var cookieSold = Math.round(store.avgCookie * store.getCustomer());
-  //  store.cookies.push(cookieSold);
-    totalCookies += cookieSold;
-
-
-    document.getElementById(store.listId).innerHTML += "<tr><td>" + hours[hoursIndex] + "</td><td>" + cookieSold + "</td></tr>"
-  }
-    document.getElementById(store.listId).innerHTML += "<tr><td>Total</td><td> " + totalCookies + "</td></tr>"
+  var store = stores[storeIndex];
+  store.writeHeader();
+  store.writeTable();
 }
 
 
-//function addStores() {
-//  var table = document.getElementById(storeList);
 
-//}
+
+
+
+
 
 
 
